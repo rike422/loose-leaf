@@ -1,0 +1,24 @@
+{
+  "name": "rails-together",
+  "version": "0.0.1",
+  "description": "WebSocket framework for Ruby on Rails.",
+  "main": "lib/assets/compiled/action_cable.js",
+  "files": [
+    "lib/assets/compiled/*.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "rike422/together"
+  },
+  "keywords": [
+    "websockets",
+    "actioncable",
+    "rails"
+  ],
+  "author": "Akira Takahashi <rike422@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rike422/together/issues"
+  },
+  "homepage": "http://rubyonrails.org/"
+}
