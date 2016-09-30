@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 class Together::Test < ActiveSupport::TestCase
   test "truth" do

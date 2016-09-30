@@ -19,6 +19,13 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 5.0.0", ">= 5.0.0.1"
 
   s.add_dependency 'ot'
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'coveralls'
+  s.add_development_dependency 'codeclimate-test-reporter'
+  s.add_development_dependency 'guard'
+  s.add_development_dependency 'guard-rspec'
+  s.add_development_dependency 'guard-rubocop', '~> 1.2.0'
   s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency 'sqlite3'
 end
