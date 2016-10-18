@@ -1,4 +1,4 @@
-# LooseLeaf[![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+# LooseLeaf[![Build Status](https://travis-ci.org/rike422/loose-leaf.svg?branch=master)](https://travis-ci.org/rike422/loose-leaf)[![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 
 LooseLeaf is a Rails Engine that allows Real-Time collaboration between users.
