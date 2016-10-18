@@ -12,3 +12,19 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+
+group :development, :test do
+  gem 'byebug'
+
+  # For dummy app
+  gem 'sqlite3'
+
+  gem 'jquery-rails'
+
+  gem 'redis'
+  gem 'puma'
+end
+
+group :test do
+  gem 'simplecov'
+end

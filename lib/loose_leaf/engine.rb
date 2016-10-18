@@ -1,9 +1,8 @@
-module Together
+module LooseLeaf
   class Engine < ::Rails::Engine
-    isolate_namespace Together
+    isolate_namespace LooseLeaf
 
     initializer 'collaborate.vendor_assets' do |app|
-      app.config.assets.paths << root.join('vendor', 'bower_components')
     end
 
     config.generators do |g|

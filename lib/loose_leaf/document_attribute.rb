@@ -1,4 +1,4 @@
-module Together
+module LooseLeaf
   class DocumentAttribute
     attr_reader :document, :attribute
 
@@ -21,7 +21,7 @@ module Together
 
       self.value = new_text(operation)
 
-      return version, operation
+      [version, operation]
     end
 
     def version
@@ -49,17 +49,16 @@ module Together
     private
 
     def value_key
-      "together-#{document.class}-#{document.id}-#{attribute}"
+      "loose_leaf-#{document.class}-#{document.id}-#{attribute}"
     end
 
     def cached_value
       return unless document.persisted?
-
       Rails.cache.read(value_key)
     end
 
     def operations_key
-      "together-#{document.class}-#{document.id}-#{attribute}-operations"
+      "loose_leaf-#{document.class}-#{document.id}-#{attribute}-operations"
     end
 
     def operations
@@ -76,13 +75,16 @@ module Together
 
     def transform_old_operation(operation, client_version)
       server_version = version
-      concurrent_operations = operations.slice(client_version - 1, server_version - client_version + 1)
+      concurrent_operations = operations.slice(
+        client_version - 1,
+        server_version - client_version + 1
+      )
 
       concurrent_operations.each do |other_operation|
         operation = OT::TextOperation.transform(operation, other_operation).first
       end
 
-      return operation
+      operation
     end
   end
 end

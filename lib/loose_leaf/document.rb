@@ -1,7 +1,7 @@
 # code base
 # https://github.com/ball-hayden/Collaborate
 
-module Together
+module LooseLeaf
   module Document
     extend ActiveSupport::Concern
 
@@ -9,13 +9,24 @@ module Together
       after_initialize :setup_collaborative_attributes
     end
 
-    class_methods do
-      def to_attributes(*attributes)
-        return @collaborative_attributes if attributes.size == 0
+    module ClassMethods
+      def collaborative_attributes(*attributes)
+        return @collaborative_attributes if attributes.size.zero?
 
         @collaborative_attributes = attributes.map(&:to_s)
 
         bind_collaborative_document_attributes
+      end
+
+      def collaborative_key(attribute = nil)
+        return @collaborative_key || :id if attribute.blank?
+        @collaborative_key ||= attribute
+      end
+
+      def find_by_collaborative_key(key)
+        query = {}
+        query[collaborative_key] = key
+        find_by(query)
       end
 
       private
@@ -48,6 +59,10 @@ module Together
       @collaborative_attributes[attribute_name.to_s]
     end
 
+    def collaborative_id
+      @collaborative_id ||= send(self.class.collaborative_key)
+    end
+
     def apply_operation(data)
       operation = OT::TextOperation.from_a data[:operation]
       attribute = data[:attribute]
@@ -72,8 +87,6 @@ module Together
     def clear_collaborative_cache(attribute)
       collaborative_attribute(attribute).clear_cache
     end
-
-    private
 
     def setup_collaborative_attributes
       @collaborative_attributes = {}

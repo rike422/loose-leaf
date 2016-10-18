@@ -1,16 +1,8 @@
-.bundle/
-log/*.log
-pkg/
-test/dummy/db/*.sqlite3
-test/dummy/db/*.sqlite3-journal
-test/dummy/log/*.log
-test/dummy/tmp/
 ### https://raw.github.com/github/gitignore/c74eb94334463252a15c8f80876847cc580b8dd3/rails.gitignore
 
 *.rbc
 capybara-*.html
 .rspec
-*.sqlite3
 /log
 /tmp
 /db/*.sqlite3
@@ -46,21 +38,5 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
-*.log
-npm-debug.log*
 
-# Coverage directory used by tools like istanbul
-coverage
-
-# Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
-
-# Dependency directories
-node_modules
-
-# Optional npm cache directory
-.npm
-
-# Optional REPL history
-.node_repl_history
 

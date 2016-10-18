@@ -1,0 +1,14 @@
+<%= form_for(document) do |f| %>
+  <input id="title" type="text" value="<%= @document.collaborative_title %>">
+
+  <textarea id="body" rows="8" cols="40"><%= @document.collaborative_body %></textarea>
+
+  <%= link_to 'Back', documents_path %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<script>
+  var documentId = <%= @document.id %>
+</script>

@@ -1,6 +1,6 @@
-module Together
-  # An ActionCable channel for TTogether
-  class TogetherChannel < ApplicationCable::Channel
+module LooseLeaf
+  # An ActionCable channel for TLooseLeaf
+  class CollaborationChannel < ApplicationCable::Channel
     attr_reader :client_id
 
     def subscribed
@@ -18,7 +18,7 @@ module Together
 
       send_attribute_versions(document)
 
-      stream_from "collaborate.documents.#{document.id}.operations"
+      stream_from "loose_leaf.documents.#{document.id}.operations"
     end
 
     def operation(data)
@@ -26,18 +26,17 @@ module Together
       document = document_type.find(data[:document_id])
 
       version, operation = document.apply_operation(data)
-
       data[:sent_version] = data[:version]
       data[:version] = version
       data[:operation] = operation.to_a
 
-      ActionCable.server.broadcast "collaborate.documents.#{document.id}.operations", data
+      ActionCable.server.broadcast "loose_leaf.documents.#{document.id}.operations", data
     end
 
     private
 
     def document_type
-      fail 'You must override the document_type method to specify your document model'
+      raise 'You must override the document_type method to specify your document model'
     end
 
     # Send out initial versions
