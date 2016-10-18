@@ -1,0 +1,23 @@
+AllCops:
+  Include:
+    - 'rakelib/**/*'
+    - 'bin/**/*'
+    - 'lib/**/*'
+    - 'spec/'
+    - 'Rakefile'
+    - 'together.gemspec'
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/dummy/**/*'
+# Offense count: 40
+# Configuration parameters: AllowHeredoc, AllowURI, URISchemes.
+# URISchemes: http, https
+Metrics/LineLength:
+  Max: 100
+
+Style/Documentation:
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+    - 'rakelib/**/*'
+    - 'lib/**/*.rb'
