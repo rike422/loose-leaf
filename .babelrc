@@ -1,0 +1,26 @@
+{
+  "presets": [
+    "react",
+    "es2015",
+    "stage-0"
+  ],
+  "plugins": [
+    "babel-plugin-transform-flow-strip-types",
+    "transform-decorators-legacy",
+    "babel-plugin-espower",
+    "transform-object-rest-spread"
+  ],
+  "env": {
+    "AVA": {
+      "plugins": [
+        [
+          "babel-plugin-webpack-loaders",
+          {
+            "config": "${CONFIG}",
+            "verbose":true
+          }
+        ]
+      ]
+    }
+  }
+}

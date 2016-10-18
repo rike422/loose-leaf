@@ -1,0 +1,11 @@
+[ignore]
+..*/node_modules/.*
+
+[include]
+./src/**/*.js
+
+[libs]
+./src/decls/
+
+[options]
+module.system.node.resolve_dirname=../node_modules

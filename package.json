@@ -1,0 +1,114 @@
+{
+  "name": "loose-leaf.js",
+  "description": "WebSocket framework for Ruby on Rails.",
+  "version": "0.0.1",
+  "author": "Akira Takahashi <rike422@gmail.com>",
+  "ava": {
+    "files": [
+      "client/test/**/*.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "bugs": {
+    "url": "https://github.com/rike422/loose-leaf/issues"
+  },
+  "dependencies": {
+    "action-cable-node": "^1.2.2",
+    "actioncable": "^5.0.0",
+    "eslint-plugin-flowtype": "^2.20.0",
+    "karma-cli": "^1.0.1",
+    "ot": "0.0.15",
+    "react": "^15.3.2",
+    "release-it": "^2.4.3"
+  },
+  "devDependencies": {
+    "ava": "avajs/ava#master",
+    "ava-spec": "^1.0.1",
+    "babel-cli": "^6.16.0",
+    "babel-eslint": "^7.0.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-espower": "^2.3.1",
+    "babel-plugin-syntax-flow": "^6.13.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-flow-strip-types": "^6.14.0",
+    "babel-plugin-webpack-loaders": "^0.8.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-es2017": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "enzyme": "^2.4.1",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-plugin-promise": "^3.0.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "fixpack": "^2.3.1",
+    "flow-bin": "^0.33.0",
+    "intelli-espower-loader": "^1.0.1",
+    "jsdom": "^9.6.0",
+    "mock-socket": "^5.0.1",
+    "power-assert": "^1.4.1",
+    "react-dom": "^15.3.2",
+    "sinon": "^1.17.6",
+    "snazzy": "^5.0.0",
+    "source-map-support": "^0.4.3",
+    "standard": "^8.3.0",
+    "standard-loader": "^5.0.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "files": [
+    "lib/assets/compiled/*.js"
+  ],
+  "homepage": "http://rubyonrails.org/",
+  "keywords": [
+    "actioncable",
+    "rails",
+    "websockets"
+  ],
+  "license": "MIT",
+  "main": "client/dist/loose-leaf.js",
+  "repository": {
+    "url": "rike422/loose-leaf",
+    "type": "git"
+  },
+  "resolutions": {
+    "source-map-support": "^0.4.3"
+  },
+  "scripts": {
+    "build": "env NODE_ENV=prod; npm run clean && npm run build:npm && npm run build:rails",
+    "build:npm": "webpack --config client/webpack.config.js",
+    "build:rails": "webpack --config client/webpack.config.rails.js",
+    "check": "npm run lint && npm run test",
+    "clean": "rm -rf client/dist",
+    "fixpack": "fixpack",
+    "flow": "flow check client",
+    "lint": "npm run standard && npm run typecheck",
+    "postinstall": "npm run fixpack",
+    "prepublish": "npm run build",
+    "prerelease": "npm run check && npm run clean && npm run build",
+    "standard": "standard 'client/src/loose-leaf/**/*.js' 'client/test/**/*.js' --verbose | snazzy",
+    "test": "NODE_PATH=./client CONFIG=$(pwd)/client/webpack.config.js BABEL_DISABLE_CACHE=1 NODE_ENV=AVA ava",
+    "test:watch": "NODE_PATH=./clinet CONFIG=$(pwd)/client/webpack.config.js BABEL_DISABLE_CACHE=1 NODE_ENV=AVA ava --watch"
+  },
+  "standard": {
+    "ignore": [
+      "webpack*",
+      "dist/"
+    ],
+    "globals": [
+      "describe",
+      "test",
+      "sinon"
+    ],
+    "plugins": [
+      "flowtype"
+    ],
+    "rules": {
+      "flowtype/define-flow-type": 1,
+      "flowtype/use-flow-type": 1
+    },
+    "parser": "babel-eslint"
+  }
+}
