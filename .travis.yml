@@ -1,0 +1,42 @@
+sudo: required
+
+language: ruby
+
+rvm:
+  - 2.3.1
+
+services:
+  - docker
+
+cache:
+  bundler: true
+  directories:
+    - node_modules # NPM packages
+
+gemfile:
+  - spec/dummy/Gemfile
+
+env:
+  global:
+    - RAILS_ENV=test
+    - DRIVER=selenium_chrome
+    - CHROME_BIN=/usr/bin/google-chrome
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y xvfb libappindicator1 fonts-liberation
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome*.deb
+  - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen scn 1600x1200x16"
+
+install:
+  - nvm install node
+  - node -v
+  - npm config set spin false
+  - npm install -g yarn
+  - yarn
+  - bundle install
+  - rake build_client
+
+script:
+  - rake
