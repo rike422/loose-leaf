@@ -1,19 +1,25 @@
-eslint:
-  enabled: true
-  config:
-    extensions:
-    - .js
-    - .jsx
-
+engines:
+  eslint:
+    enabled: true
+    config:
+      extensions:
+      - .js
+      - .jsx
+  rubocop:
+    enabled: true
+  brakeman:
+    enabled: true
+  bundler-audit:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+      - javascript
+      
 ratings:
    paths:
    - "**.js"
    - "**.jsx"
-
-engines:
-  rubocop:
-    enabled: true
-
-ratings:
-   paths:
    - "**.rb"
