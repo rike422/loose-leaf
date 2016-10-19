@@ -23,7 +23,7 @@ module LooseLeaf
 
     def operation(data)
       data = ActiveSupport::HashWithIndifferentAccess.new(data)
-      document = collaborative_model.find(data[:document_id])
+      document = collaborative_model.find_by_collaborative_key(data[:document_id])
 
       version, operation = document.apply_operation(data)
       data[:sent_version] = data[:version]
