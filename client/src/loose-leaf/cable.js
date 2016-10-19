@@ -20,8 +20,8 @@ export default class Cable {
       channel,
       documentId: this.documentId
     }, {
-      connected: this.connected,
-      received: this.received
+      connected: this.connected.bind(this),
+      received: this.received.bind(this)
     })
   }
 
