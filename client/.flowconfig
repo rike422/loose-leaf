@@ -5,7 +5,7 @@
 ./src/**/*.js
 
 [libs]
-./src/decls/
+./src/flow-typed/
 
 [options]
 module.system.node.resolve_dirname=../node_modules
