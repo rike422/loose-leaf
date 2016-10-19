@@ -5,7 +5,7 @@ import AttributeCable from './attribute-cable'
 import AwaitingAck from './collaborative_attributes/awaiting-ack'
 import AwaitingWithBuffer from './collaborative_attributes/awaiting-with-buffer'
 import Synchronized from './collaborative_attributes/synchronized'
-import { Statable } from 'LooseLeaf'
+import { Statable } from './types'
 
 class CollaborativeAttribute {
 
