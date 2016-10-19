@@ -1,4 +1,4 @@
-# LooseLeaf [![Build Status](https://travis-ci.org/rike422/loose-leaf.svg?branch=master)](https://travis-ci.org/rike422/loose-leaf) [![Coverage Status](https://coveralls.io/repos/github/rike422/loose-leaf/badge.svg?branch=master)](https://coveralls.io/github/rike422/loose-leaf?branch=master) [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+# LooseLeaf [![Build Status](https://travis-ci.org/rike422/loose-leaf.svg?branch=master)](https://travis-ci.org/rike422/loose-leaf) [![Coverage Status](https://coveralls.io/repos/github/rike422/loose-leaf/badge.svg?branch=master)](https://coveralls.io/github/rike422/loose-leaf?branch=master) [![Code Climate](https://codeclimate.com/github/rike422/loose-leaf/badges/gpa.svg)](https://codeclimate.com/github/rike422/loose-leaf) [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 
 LooseLeaf is a Rails Engine that allows Real-Time collaboration between users.
