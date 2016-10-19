@@ -1,7 +1,7 @@
 class DocumentChannel < LooseLeaf::CollaborationChannel
   private
 
-  def document_type
+  def collaborative_model
     Document
   end
 end

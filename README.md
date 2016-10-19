@@ -70,7 +70,7 @@ class DocumentChannel < LooseLeaf::CollaborationChannel
   private
 
   # Set the Model class that we are editing.
-  def document_type
+  def collaborative_model
     Document
   end
 end

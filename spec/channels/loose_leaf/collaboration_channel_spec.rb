@@ -10,7 +10,7 @@ module LooseLeaf
         @document = document
       end
 
-      def document_type
+      def collaborative_model
         ::Document
       end
 

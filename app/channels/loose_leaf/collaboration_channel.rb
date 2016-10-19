@@ -11,7 +11,7 @@ module LooseLeaf
 
     # Subscribe to changes to a document
     def document(data)
-      document = document_type.find(data['id'])
+      document = collaborative_model.find_by_collaborative_key(data['id'])
 
       @documents ||= []
       @documents << document
@@ -23,7 +23,7 @@ module LooseLeaf
 
     def operation(data)
       data = ActiveSupport::HashWithIndifferentAccess.new(data)
-      document = document_type.find(data[:document_id])
+      document = collaborative_model.find(data[:document_id])
 
       version, operation = document.apply_operation(data)
       data[:sent_version] = data[:version]
@@ -35,13 +35,13 @@ module LooseLeaf
 
     private
 
-    def document_type
-      raise 'You must override the document_type method to specify your document model'
+    def collaborative_model
+      raise 'You must override the collaborative_model method to specify your collaborative model'
     end
 
     # Send out initial versions
     def send_attribute_versions(document)
-      document_type.collaborative_attributes.each do |attribute_name|
+      collaborative_model.collaborative_attributes.each do |attribute_name|
         attribute = document.collaborative_attribute(attribute_name)
 
         transmit(
