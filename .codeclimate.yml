@@ -1,0 +1,19 @@
+eslint:
+  enabled: true
+  config:
+    extensions:
+    - .js
+    - .jsx
+
+ratings:
+   paths:
+   - "**.js"
+   - "**.jsx"
+
+engines:
+  rubocop:
+    enabled: true
+
+ratings:
+   paths:
+   - "**.rb"
