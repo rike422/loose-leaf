@@ -1,4 +1,4 @@
-# LooseLeaf [![Build Status](https://travis-ci.org/rike422/loose-leaf.svg?branch=master)](https://travis-ci.org/rike422/loose-leaf) [![Coverage Status](https://coveralls.io/repos/github/rike422/loose-leaf/badge.svg?branch=master)](https://coveralls.io/github/rike422/loose-leaf?branch=master)
+# LooseLeaf [![Build Status](https://travis-ci.org/rike422/loose-leaf.svg?branch=master)](https://travis-ci.org/rike422/loose-leaf) [![Coverage Status](https://coveralls.io/repos/github/rike422/loose-leaf/badge.svg?branch=master)](https://coveralls.io/github/rike422/loose-leaf?branch=master) [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 
 LooseLeaf is a Rails Engine that allows Real-Time collaboration between users.
@@ -95,7 +95,9 @@ var documentId = <%= @document.id %>
 </script>
 ```
 
-### JavaScript [![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+### JavaScript 
+
+[![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 #### Sprockets
 
