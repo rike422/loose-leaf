@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    loose_leaf (0.1.0)
+    loose_leaf (0.0.1)
       ot
       rails (~> 5.0.0, >= 5.0.0.1)
 
