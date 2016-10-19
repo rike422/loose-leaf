@@ -1,10 +1,10 @@
 // @flow
 
-interface Statable {
+export interface Statable {
   localOperation (operation: any): void;
   receiveAck (data: any): void;
   transformRemoteOperation(data: any): void
 }
 
-interface Adaptable {
+export interface Adaptable {
 }
