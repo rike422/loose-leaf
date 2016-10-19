@@ -23,6 +23,7 @@ module.exports = {
   },
 
   resolve: {
+    extensions: ['', '.js', '.jsx', '.js.flow'],
     modulesDirectories: [
       __dirname,
       '../node_modules',
@@ -34,9 +35,9 @@ module.exports = {
   module: {
     preLoaders: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|js\.flow)$/,
         loader: 'standard',
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         include: [
           path.resolve('src'),
           path.resolve('test')
@@ -45,8 +46,8 @@ module.exports = {
     ],
     loaders: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.(js|jsx|js\.flow)$/,
+        exclude: /(node_modules)/,
         loaders: [
           'babel-loader'
         ]
