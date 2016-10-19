@@ -36,7 +36,7 @@ install:
   - npm install -g yarn
   - yarn
   - bundle install
-  - rake build_client
+  - rake node_package
 
 script:
   - rake
