@@ -4,7 +4,7 @@ require_relative 'task_helpers'
 include LooseLeaf::TaskHelpers
 
 namespace :node_package do
-  task :build_client do
+  task :build do
     sh 'npm run build'
   end
 end
