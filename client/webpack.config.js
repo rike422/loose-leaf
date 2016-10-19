@@ -2,7 +2,7 @@ process = require('process')
 const NODE_ENV = process.env.NDOE_ENV
 const outputConfig = {
   output: {
-    path: 'dist/',
+    path: 'client/dist/',
     filename: 'loose-leaf.js'
   }
 }
