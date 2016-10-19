@@ -1,6 +1,6 @@
 {
   "name": "loose-leaf.js",
-  "description": "WebSocket framework for Ruby on Rails.",
+  "description": "TextEditor framework",
   "version": "0.0.1",
   "author": "Akira Takahashi <rike422@gmail.com>",
   "ava": {
@@ -59,11 +59,14 @@
     "webpack-dev-server": "^1.16.1"
   },
   "files": [
-    "lib/assets/compiled/*.js"
+    "client/dist/*.js"
   ],
-  "homepage": "http://rubyonrails.org/",
+  "homepage": "https://github.com/rike422/loose-leaf",
   "keywords": [
     "actioncable",
+    "flow",
+    "flowtype",
+    "ot",
     "rails",
     "websockets"
   ],
