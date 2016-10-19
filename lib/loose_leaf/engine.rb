@@ -2,7 +2,7 @@ module LooseLeaf
   class Engine < ::Rails::Engine
     isolate_namespace LooseLeaf
 
-    initializer 'collaborate.vendor_assets' do |app|
+    initializer 'loose_leaf.vendor_assets' do |app|
     end
 
     config.generators do |g|

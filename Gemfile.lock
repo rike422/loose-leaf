@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    loose-leaf (0.1.0)
+    loose_leaf (0.1.0)
       ot
       rails (~> 5.0.0, >= 5.0.0.1)
 
@@ -242,7 +242,7 @@ DEPENDENCIES
   guard-rspec
   guard-rubocop
   jquery-rails
-  loose-leaf!
+  loose_leaf!
   pry
   pry-byebug
   pry-doc

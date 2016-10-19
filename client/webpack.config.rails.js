@@ -6,7 +6,7 @@ const outputConfig = {
   output: {
     library: 'LooseLeaf',
     libraryTarget: 'umd',
-    path: 'app/assets/javascripts/loose-leaf',
+    path: 'app/assets/javascripts/loose_leaf',
     filename: 'index.js'
   }
 }

@@ -5,7 +5,7 @@ require 'loose_leaf/version'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = 'loose-leaf'
+  s.name        = 'loose_leaf'
   s.version     = LooseLeaf::VERSION
 
   s.authors     = ['Akira Takahashi']
