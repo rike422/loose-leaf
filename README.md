@@ -13,7 +13,7 @@ This project inspired by [Collabrate](https://github.com/ball-hayden/Collaborate
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'together'
+gem 'loose_leaf'
 ```
 
 And then execute:
